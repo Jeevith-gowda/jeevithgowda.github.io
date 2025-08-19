@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeevith | Portfolio</title>
+  <meta name="description" content="Portfolio of Jeevith (Jeev) — AI, Robotics, and Data Science projects." />
+  <meta property="og:title" content="Jeevith | Portfolio" />
+  <meta property="og:description" content="AI, Robotics, and Data Science projects, research, and experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/0?v=4" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23001122'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='34' fill='white'%3EJ%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b1220;         /* dark indigo */
+      --card: #121a2b;       /* slightly lighter */
+      --muted: #93a2b7;      /* slate */
+      --text: #e6edf6;       /* off-white */
+      --brand: #6dd3ff;      /* soft cyan */
+      --accent: #a78bfa;     /* soft violet */
+      --ring: rgba(109, 211, 255, 0.35);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background: radial-gradient(1000px 600px at 80% -20%, rgba(167,139,250,.15), transparent),
+                  radial-gradient(900px 700px at -10% 10%, rgba(109,211,255,.10), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: saturate(150%) blur(8px);
+      background: linear-gradient(to bottom, rgba(11,18,32,.85), rgba(11,18,32,.55));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav { display: flex; gap: 18px; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .4px; }
+    .brand .logo { width: 34px; height: 34px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--brand)); display: grid; place-items: center; font-weight: 800; }
+    .links { display: flex; gap: 16px; font-weight: 600; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 40px 0 28px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 8px; }
+    .hero p.lead { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin: 0 0 18px; }
+    .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: var(--card); color: var(--text); font-weight: 700; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--brand)); color: #0b1220; border: none; box-shadow: 0 10px 30px -12px var(--ring); }
+    .btn:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), transparent), var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 10px 30px -25px rgba(0,0,0,.6);
+    }
+    .grid { display: grid; gap: 16px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    section { padding: 24px 0; }
+    section h2 { font-size: 22px; margin: 0 0 10px; letter-spacing: .3px; }
+    .muted { color: var(--muted); }
+
+    .project { display: grid; gap: 10px; }
+    .project .stack { font-size: 12px; opacity: .85; }
+    .project .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    footer { padding: 28px 0 60px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.two { grid-template-columns: 1fr; }
+      .grid.three { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Home">
+        <div class="logo" aria-hidden="true">J</div>
+        <span>Jeevith</span>
+      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <div>
+        <h1>AI, Robotics & Data Science</h1>
+        <p class="lead">Hi, I'm <b>Jeev (Jeevith)</b> — MS student in CS (AI & Robotics). I build ML systems, publish, and turn ideas into useful tools.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:your.email@example.com">Email Me</a>
+          <a class="btn" href="https://github.com/jeevith" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <p class="muted">Currently:</p>
+        <ul>
+          <li>Research: Melanoma detection (Best Paper, IEEE Xplore — pending publication)</li>
+          <li>Learning: Regression → Clustering → Deep Learning</li>
+          <li>Running: 5K in ~30 min, marathon training</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid three">
+        <article class="card project">
+          <div>
+            <h3>Skin Lesion Classifier</h3>
+            <p class="muted">Deep learning pipeline for melanoma detection with Grad-CAM explainability.</p>
+          </div>
+          <div class="stack">Python · PyTorch · FastAPI · Docker</div>
+          <div class="actions">
+            <a class="btn" href="#">Live Demo</a>
+            <a class="btn" href="#">Code</a>
+          </div>
+        </article>
+        <article class="card project">
+          <div>
+            <h3>Customer Purchase Predictor</h3>
+            <p class="muted">End‑to‑end ML project with feature engineering and model monitoring.</p>
+          </div>
+          <div class="stack">Python · scikit‑learn · MLflow</div>
+          <div class="actions">
+            <a class="btn" href="#">Case Study</a>
+            <a class="btn" href="#">Code</a>
+          </div>
+        </article>
+        <article class="card project">
+          <div>
+            <h3>Robotics: Path Planning Demo</h3>
+            <p class="muted">A* vs. RRT* comparison with interactive visualizations.</p>
+          </div>
+          <div class="stack">Python · Jupyter · D3.js</div>
+          <div class="actions">
+            <a class="btn" href="#">Write‑up</a>
+            <a class="btn" href="#">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience & Highlights</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Research & Awards</h3>
+          <ul>
+            <li>Best Paper Award — Melanoma detection (to appear in IEEE Xplore)</li>
+            <li>3rd place — Final year project; Inter‑college hackathons participant</li>
+            <li>Workshop delivered — Deep learning fundamentals</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Skills</h3>
+          <p class="muted">Python, PyTorch, scikit‑learn, SQL, FastAPI, Docker, Git, Data Viz</p>
+          <p class="muted">Robotics: path planning, basic control, simulation</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>I’m a CS grad student focusing on <b>AI, robotics, and data science</b>. I like building practical ML systems, explaining complex ideas simply, and shipping things that help people.</p>
+        <p>Outside tech, I run, mentor juniors, and explore Boston’s food scene.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/jeevith" target="_blank" rel="noreferrer">GitHub</a></p>
+        <p class="muted">Want a contact form on a static site? Wire this button to Formspree or Netlify Forms later.</p>
+        <p><a class="btn" href="#">Open Contact Form</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Jeevith • Built with HTML/CSS • Hosted on GitHub Pages</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
